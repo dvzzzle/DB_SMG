@@ -124,29 +124,21 @@
             }
         ]
     },
-    "ano-info": {
+    "stages": {
         "construction_stages_library": 
         [
             {
-                "name": "Строительная готовность",
-                "week_plan": "+1",
-                "week_fact": "+1",
-                "month_plan": "+2",
-                "month_fact": "+2",
+                "name": "Устройство подземной части",
                 "object_construction_stages": {
-                    "developer_plan": "77",
-                    "developer_fact": "78"
+                    "developer_plan": "100",
+                    "developer_fact": "100"
                 }
             },
             {
-                "name": "Конструктив",
-                "week_plan": "+1",
-                "week_fact": "-2",
-                "month_plan": "+1",
-                "month_fact": "+0",
+                "name": "Устройство надземной части",
                 "object_construction_stages": {
-                    "developer_plan": "89",
-                    "developer_fact": "80"
+                    "developer_plan": "100",
+                    "developer_fact": "85"
                 }
             }
         ]

@@ -59,16 +59,6 @@ const Dashboard = () => {
   };
 
   /*-----------------------------------------------------------------------------*/
-  //Данные получаемые из JSON
-
-  const object_name = data['objects'].name;
-  const object_region = data['objects'].regions_library.name;
-  const object_adress = data['objects'].adress;
-  const object_uin = data['objects'].uin;
-  const object_area = data['objects'].area;
-  const object_passport_link = data['objects'].link;
-
-  /*-----------------------------------------------------------------------------*/
 
   return (
     <div className="main-container w-[1920px] h-auto text-[0px] bg-[#f1f3f7] rounded-[16px] relative overflow-hidden mx-auto my-0 pb-14">
@@ -80,10 +70,10 @@ const Dashboard = () => {
           <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[2]">
             <div className="flex w-[517px] gap-[24px] items-center shrink-0 flex-nowrap relative z-[3]">
               <span className="h-[21px] shrink-0 basis-auto font-['Golos_Text'] text-[30px] font-bold leading-[21px] text-[#161616] relative text-left whitespace-nowrap z-[4]">
-                {object_name}
+                {data['objects'].name}
               </span>
               <span className="flex w-[74px] h-[13px] justify-start items-start shrink-0 font-['Golos_Text'] text-[24px] font-normal leading-[13px] text-[#161616] relative text-left whitespace-nowrap z-[5]">
-                {object_region}
+                {data['objects'].regions_library.name}
               </span>
               <button className="flex w-[138px] h-[25px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#f8e4e4] rounded-[7px] border-solid border border-[#c00000] relative z-[6] pointer">
                 <span className="h-[11px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-semibold leading-[11px] text-[#c00000] relative text-left whitespace-nowrap z-[7]">
@@ -101,14 +91,14 @@ const Dashboard = () => {
             </span>
           </div>
           <span className="flex w-[530px] h-[14px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-normal leading-[14px] text-[#161616] relative text-left whitespace-nowrap z-[11]">
-            {object_adress}
+            {data['objects'].adress}
           </span>
           <div className="flex w-[213px] gap-[12px] items-start shrink-0 flex-nowrap relative z-[12]">
             <span className="h-[11px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-normal leading-[11px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[13]">
               УИН
             </span>
             <span className="h-[11px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-medium leading-[11px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[14]">
-              {object_uin}
+              {data['objects'].uin}
             </span>
           </div>
         </div>
@@ -119,11 +109,11 @@ const Dashboard = () => {
             </span>
             <span className="h-[19px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-normal leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[18]">
               {" "}
-              {object_area} м²
+              {data['objects'].area} м²
             </span>
           </div>
           <span className="h-[19px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-medium leading-[19px] text-[#c00000] relative text-left whitespace-nowrap z-[19] cursor-pointer">
-            <a href = {object_passport_link}>Ссылка на цифровой паспорт объекта</a>
+            <a href = {data['objects'].link}>Ссылка на цифровой паспорт объекта</a>
           </span>
         </div>
       </div>
@@ -1247,7 +1237,7 @@ const Dashboard = () => {
               <SwiperSlide>
                 <div className="flex flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[294]">
                   <span className="flex w-[129px] h-[40px] mx-auto justify-center items-start shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[295]">
-                    Устройство подземной части
+                    {data['stages'].construction_stages_library[0].name}
                   </span>
                   <div className="h-[6px] w-[129px] mx-auto self-stretch shrink-0 bg-[#00863d] rounded-[20px] relative overflow-hidden z-[296]" />
                 </div>
@@ -1255,7 +1245,7 @@ const Dashboard = () => {
               <SwiperSlide>
               <div className="flex flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[297]">
                 <span className="flex w-[139px] h-[40px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[20px] text-[#161616] relative text-center z-[298]">
-                  Устройство надземной части
+                  {data['stages'].construction_stages_library[1].name}
                 </span>
                 <div className="h-[6px] w-[139px] self-stretch shrink-0 bg-[url(../assets/images/7ca94064-048d-49b9-8f71-a832fe1b644b.png)] bg-cover bg-no-repeat rounded-[20px] relative overflow-hidden z-[299]" />
               </div>
