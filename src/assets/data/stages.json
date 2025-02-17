@@ -1,0 +1,66 @@
+{
+    "object_control_point": [ //верхний слайдер
+            {
+                "control_point_library": {
+                    //...
+                    "name": "Устройство инженерных систем"
+                    //...
+                },
+                "plan_date": "06.12.24", //
+                "fact_date": "-",
+                "developers": {
+                    "name": "ООО 'ГП-МФС'"
+                }
+            }            
+        ],
+    "count.object_control_point": "8", //кол-во этапов в работе)) для рассматриваемого объекта
+    "count.object_control_point": "19", // кол-во этапов всех этапов для рассматриваемого объекта
+    "object_control_point": [ //таблица 
+        {
+            "control_point_library": {
+                //...
+                "name": "Устройство инженерных систем"
+                //...
+            },
+            "plan_date": "06.12.24", 
+            "fact_date": "-",
+            "developers": {
+                "name": "ООО 'ГП-МФС'"
+            },
+            "readiness": "77", //% выполнения этапа для рассматриваемого объекта
+            "object_construction_stages": {//подкатегория контрольных точек для рассматриваемого объекта
+                "name": "",
+                "developers": {
+                    "name": ""
+                },
+                "plan_date": "06.12.24",
+                "fact_date": "-"
+            }
+        }
+    ],
+    "count.object_control_point": "11", //кол-во выполненых этапов для рассматриваемого объекта
+    "object_control_point": [ //те этапы что выполнены для рассматриваемого объекта
+        {
+            "control_point_library": {
+                //...
+                "name": "Устройство инженерных систем"
+                //...
+            },
+            "plan_date": "06.12.24",
+            "fact_date": "-",
+            "developers": {
+                "name": "ООО 'ГП-МФС'"
+            },
+            "readiness": "77", //% выполнения этапа для рассматриваемого объекта
+            "object_construction_stages": {//подкатегория контрольных точек
+                "name": "",
+                "developers": {
+                    "name": ""
+                },
+                "readiness": "77", //% выполнения этапа для рассматриваемого объекта
+                "plan_date": "06.12.24", //
+                "fact_date": "-"
+            }
+        }
+    ]
+}

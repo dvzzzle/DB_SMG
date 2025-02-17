@@ -1,0 +1,142 @@
+{
+    "objects": {
+        "name": "Жилой дом", //tep_0007
+        "regions_library": {
+            //...
+            "name": "ВАО" //tep_0011 Регион
+            //...
+        },
+        "renovation": "True", //отвечает за отображение статуса объекта "реновация" или "не реновация" //tep_0017
+        "adress": "Амурская ул. ул. 1/19 (зоны 1.1, 1.2, 1.5)", //tep_0016
+        "uin": "ТТ0000-99-7886-001", //tep_0004
+        "area": "20549,94", //tep_0024
+        "link": "link" //tep_0005
+    },
+    "object_construction_stages": [
+        {
+            "construction_stages_library": {
+                "name": "Устройство надземной части" //этапы работ 
+            },
+            "comment": "Недостаточное кол-во рабочей силы при воздействии внутренних перегородок", //нет в БД
+            "measures": "Мобилизовать 100 человек", //нет в БД
+            "developers": {
+                //...
+                "name":"ООО 'ГП-МФС'" //tep_0019
+                //...
+            }, 
+            "already-done": "04.10.2024 направлено предписание Статус претензионной работы: в работе Сумма штрафа: 750 тыс.руб", //нет в БД
+            "end_date_plan": "04.11.2024", //нет в БД
+            "status": "В работе" //нет в БД
+        }
+        //...
+    ],
+
+
+
+    // "panel-obj-info": {
+        "photos.photo_url": "link", 
+        "date": "20.06.2023", //tep_0027 дата контрактации
+    //     "customers": {
+    //         ///...
+    //         "name": "ДГП", //tep_0021
+	// 		// ССЫЛКА НА УГД (НЕ ОТОБРАЖАТЬ ПОКА)
+    //         ///...
+    //     },
+    //     "developers" {
+    //         ///...
+    //         "name": "ООО 'ГП-МФС'", //tep_0019
+	// 		// ССЫЛКА НА УГД (НЕ ОТОБРАЖАТЬ ПОКА)
+    //         ///...
+    //     },
+        "numer-of-floors": "14",  //Нет в БД
+        "videocams": {
+            "name": "Видеокамеры", //Будет тянуться из УГД, но пока не догворились по API нет в БД
+            "value": "link" //нет в БД
+        },
+        "object_control_point": {
+            "object_control_point.updated_at": "25.09.2024", //дата последнего продления 
+            "count.object_control_point.updated_at": "5", //арифметическое значение
+            "object_control_point.plan_date": "30.12.2024", //tep_0049 ПОЛУЧЕНИЕ РВ
+            "objects.aip_inclusion_date": "25.09.2024", //tep_0026 //Дата включения АИП
+            "aip_sum": "1,871", // нет в БД нет ТЭПА
+            "percent": "0" //арифметическое значение нет в БД
+        },
+        "prepayment": { //нет в БД
+            "name": "Аванс",
+            "value": "0",
+            "percent": "0"
+        }
+    },
+
+    "panel-monitoring": { //Мониторинг ресурсов на строительной площадке
+        "monitor_people": {
+            "monitor_people.timestamp": "01.12.2024",
+            "monitor_people.count_plan": "200", 
+            "monitor_people.count_fact": "180" //tep_0032
+        },
+        "monitor_technica": { 
+            "monitor_technica.timestamp": "01.12.2024",
+            "monitor_technica.count_plan": "50", 
+            "monitor_technica.count_fact": "41" //tep_0031
+            }
+    },
+
+    "info-switch": {
+                "developers.name": "Данные заказчика", //tep_0021
+                    "object_control_point": {
+                        "object_control_point.plan_date": "30.12.2024", //tep_0028
+                        "control_point_library": {
+                            ///...
+                            "name": "Плановый ввод по директивному графику"
+                            ///...
+                        },
+                        "warning": {
+                            "name": "Срок изменен",
+                            "warning-hover": {
+                                "object_control_point.updated_at": "03.12.2024", //предыдущая запись по директивному графику tep_0028
+                                "object_control_point.updated_at": "25.09.2024", //последняя запись по директивному графику tep_0028
+                                "users.first_name + users.family_name + users.father_name": "Ефимов В.В.", //"Кем принято решение"
+                                "who-decided-additional-2": "24.09.2024" //нет в БД
+                        }
+                    },
+                        
+                    "objects": {
+                        "planned_commissioning_date": "20.11.2024", //tep_0029 Плановый ввод по договору
+                        "forecasted_commissioning_date": "26.12.2024", //tep_0030 Прогнозируемый срок ввода
+						"warning": [ //прогнозируемый срок ввода
+                            {
+                                "original_deadline": "28.02.2024", //исходный дедлайн 
+                                "gap":"346" //Отставание в днях, равное модулю разницы в количестве дней между текущей датой и значением «план» по данной КТ
+                            }
+                        ],
+                        "warning": [ //плановый ввод по директивному графику
+                        {
+                            "original_deadline": "27.10.2024", //исходный дедлайн 
+                            "gap":"346" //Отставание в днях, равное модулю разницы в количестве дней между текущей датой и значением «план» по данной КТ
+                        }
+                    ]
+
+
+                    },
+                    "construction_stages_library": {
+                        ///...
+                        "name": "Строительная готовность"
+                    },
+                    "week_plan": "1%", //арифметическое значение
+                    "week_fact": "1%", //арифметическое значение
+                    "month_plan": "2%", //арифметическое значение
+                    "month_fact": "2%", //арифметическое значение
+                    "object_construction_stages": {
+                        "developer_plan": "77%", //(tep_0055) - это в конкретном случае 55 ТЭП, а так могут быть другие этапы // также этого значения нет в БД, оно арифметическое
+                        "developer_fact": "78%" //(tep_0056)
+                    }
+                },
+            "ano-info": {
+                "name": "Данные АНО", //
+                "ano_plan": "77%", //(tep_0055)
+                "object_construction_stages.ano_fact": "77%" ////(tep_0056)
+        }
+    }
+}
+
+

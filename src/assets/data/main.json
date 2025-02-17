@@ -1,0 +1,84 @@
+{
+    "panel-all": 
+    {
+        "name": "Всего",
+        "count": "153",
+        "area": "1.59",
+        "delta": "0"
+    },
+    "panel-work-not-stated": 
+    {
+        "name": "Работы не начаты",
+        "objects": {
+            "count": "10",
+            "area": "0.10",
+            "delta": "-3"
+        },
+        "violation_of_deadlines": {
+            "name": "Возможно нарушение сроков",
+            "count": "0",
+            "area": "0.00",
+            "delta": "0"
+        },
+        "missed_deadlines": {
+            "name": "Срыв срока",
+            "count": "0",
+            "area": "0.00",
+            "delta": "0"
+        }
+    },
+    "panel_pir": 
+    {
+        "name": "ПИР",
+        "objects": {
+            "count": "4",
+            "area": "0.29",
+            "delta": "3"
+        },
+        "violation_of_deadlines": {
+            "name": "Возможно нарушение сроков",
+            "count": "2",
+            "area": "0.03",
+            "delta": "0"
+        },
+        "missed_deadlines": {
+            "name": "Срыв срока",
+            "count": "2",
+            "area": "0.01",
+            "delta": "0"
+        }
+    },
+    "panel_smr":
+        {
+        "name": "СМР",
+        "objects": {
+            "count": "32",
+            "area": "0.29",
+            "delta": "+42"
+        },
+        "schedule_input": {
+            "name": "Ввод по графику",
+            "count": "29",
+            "area": "0.25",
+            "delta": "-2"
+        },
+        "violation_of_deadlines": {
+            "name": "Возможно нарушение сроков",
+            "count": "2",
+            "area": "0.03",
+            "delta": "0"
+        },
+        "missed_deadlines": {
+            "name": "Срыв срока",
+            "count": "1",
+            "area": "0.01",
+            "delta": "+1"
+        }
+    },
+    "panel_ready": {
+        "name": "Введено",
+        "count": "25",
+        "area": "0.17",
+        "delta": "3"
+    }
+}
