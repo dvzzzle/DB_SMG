@@ -8,6 +8,8 @@ import { Swiper as SwiperRef } from "swiper";
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import data from '/home/george/Task-DB-SMG/src/assets/data/stages.json';
+
 const Etaps = ()=> {
 
   const swiperRef = useRef<SwiperRef | null>(null);
@@ -49,7 +51,7 @@ const Etaps = ()=> {
           <SwiperSlide className="flex w-[320px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#c00000] relative z-[405]">
             <div>
               <span className="flex w-[248px] h-[58px] justify-start items-center self-stretch shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[406]">
-                Устройство инженерных систем
+                {data['object_control_point_slider'][0].control_point_library.name}
               </span>
               <div className="flex flex-col gap-[10px] items-start self-stretch shrink-0 flex-nowrap relative z-[407]">
                 <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[408]">
@@ -57,7 +59,7 @@ const Etaps = ()=> {
                     План
                   </span>
                   <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[410]">
-                    06.12.24
+                   {data['object_control_point_slider'][0].plan_date}
                   </span>
                 </div>
                 <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[411]">
@@ -65,7 +67,7 @@ const Etaps = ()=> {
                     Факт
                   </span>
                   <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[413]">
-                    -
+                   {data['object_control_point_slider'][0].fact_date}
                   </span>
                 </div>
                 <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[414]">
@@ -73,7 +75,7 @@ const Etaps = ()=> {
                     Исполнитель
                   </span>
                   <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[416]">
-                    ООО "ГП-МФС"
+                   {data['object_control_point_slider'][0].developers.name}
                   </span>
                 </div>
               </div>
@@ -82,7 +84,7 @@ const Etaps = ()=> {
           </SwiperSlide>
           <SwiperSlide className="flex w-[304px] pt-[24px] pr-[36px] pb-[24px] pl-[36px] flex-col justify-between items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[12px] border-solid border-2 border-[#bf9000] relative z-[418]">
             <span className="flex w-[199px] h-[58px] justify-start items-center shrink-0 font-['Inter'] text-[24px] font-medium leading-[29.045px] text-[#161616] relative text-left z-[419]">
-              Отделочные работы
+             {data['object_control_point_slider'][1].control_point_library.name}
             </span>
             <div className="flex flex-col gap-[10px] items-start self-stretch shrink-0 flex-nowrap relative z-[420]">
               <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[421]">
@@ -90,7 +92,7 @@ const Etaps = ()=> {
                   План
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[423]">
-                  20.12.24
+                 {data['object_control_point_slider'][1].plan_date}
                 </span>
               </div>
               <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[424]">
@@ -98,7 +100,7 @@ const Etaps = ()=> {
                   Факт
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[426]">
-                  -
+                 {data['object_control_point_slider'][1].fact_date}
                 </span>
               </div>
               <div className="flex justify-between items-start self-stretch shrink-0 flex-nowrap relative z-[427]">
@@ -106,7 +108,7 @@ const Etaps = ()=> {
                   Исполнитель
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[429]">
-                  ООО "ГП-МФС"
+                 {data['object_control_point_slider'][1].developers.name}
                 </span>
               </div>
             </div>
@@ -249,7 +251,7 @@ const Etaps = ()=> {
             В работе
           </span>
           <span className="h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-medium leading-[29px] text-[#161616] relative text-left whitespace-nowrap z-[7]">
-            8
+           {data['count_object_control_point_in_progress']}
           </span>
         </div>
         <div className="flex w-[164px] gap-[16px] items-center shrink-0 flex-nowrap relative z-[8]">
@@ -257,7 +259,7 @@ const Etaps = ()=> {
             Все этапы
           </span>
           <span className="h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-medium leading-[29px] text-[#161616] relative text-left whitespace-nowrap z-10">
-            19
+          {data['count_object_control_point_total']}
           </span>
         </div>
       </div>
@@ -266,7 +268,7 @@ const Etaps = ()=> {
           <div className="flex pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center self-stretch shrink-0 flex-nowrap bg-[#f8e4e4] rounded-[8px] border-solid border border-[#c00000] relative z-[13]">
             <div className="flex w-[737px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[14]">
               <span className="flex w-[737px] h-[29px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[24px] font-bold leading-[29px] text-[#000] relative text-left whitespace-nowrap z-[15]">
-                Устройство надземной части
+               {data['object_control_point_table'][0].control_point_library.name}
               </span>
             </div>
             <div className="flex w-[687px] gap-[24px] items-start shrink-0 flex-nowrap relative z-[16]">
@@ -275,7 +277,7 @@ const Etaps = ()=> {
                   Исполнитель
                 </span>
                 <span className="flex w-[127px] h-[19px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[19]">
-                  ООО "ГП-МФС"
+                 {data['object_control_point_table'][0].developers.name}
                 </span>
               </div>
               <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-20">
@@ -283,7 +285,7 @@ const Etaps = ()=> {
                   План
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[22]">
-                  04.10.24
+                 {data['object_control_point_table'][0].plan_date}
                 </span>
               </div>
               <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[23]">
@@ -291,7 +293,7 @@ const Etaps = ()=> {
                   Факт
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[25]">
-                  -
+                 {data['object_control_point_table'][0].fact_date}
                 </span>
               </div>
               <div className="flex w-[148px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[26]">
@@ -299,7 +301,7 @@ const Etaps = ()=> {
                   Выполнение
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[28]">
-                  77%
+                 {data['object_control_point_table'][0].readiness}%
                 </span>
               </div>
             </div>
@@ -307,7 +309,7 @@ const Etaps = ()=> {
           <div className="flex pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center self-stretch shrink-0 flex-nowrap bg-[#f8e4e4] rounded-[8px] border-solid border border-[#c00000] relative z-[29]">
             <div className="flex w-[737px] gap-[36px] items-center shrink-0 flex-nowrap relative z-30">
               <span className="flex w-[737px] h-[29px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[24px] font-bold leading-[29px] text-[#000] relative text-left whitespace-nowrap z-[31]">
-                Устройство инженерных систем
+                {data['object_control_point_table'][1].control_point_library.name}
               </span>
             </div>
             <div className="flex w-[687px] gap-[24px] items-start shrink-0 flex-nowrap relative z-[32]">
@@ -316,7 +318,7 @@ const Etaps = ()=> {
                   Исполнитель
                 </span>
                 <span className="flex w-[127px] h-[19px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[35]">
-                  ООО "ГП-МФС"
+                 {data['object_control_point_table'][1].developers.name}
                 </span>
               </div>
               <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[36]">
@@ -324,7 +326,7 @@ const Etaps = ()=> {
                   План
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[38]">
-                  06.12.24
+                 {data['object_control_point_table'][1].plan_date}
                 </span>
               </div>
               <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[39]">
@@ -332,7 +334,7 @@ const Etaps = ()=> {
                   Факт
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[41]">
-                  -
+                 {data['object_control_point_table'][1].fact_date}
                 </span>
               </div>
               <div className="flex w-[148px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[42]">
@@ -340,7 +342,7 @@ const Etaps = ()=> {
                   Выполнение
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[44]">
-                  77%
+                 {data['object_control_point_table'][1].readiness}%
                 </span>
               </div>
             </div>
@@ -597,7 +599,7 @@ const Etaps = ()=> {
             Выполнено
           </span>
           <span className="h-[29px] shrink-0 basis-auto font-['Inter'] text-[24px] font-medium leading-[29px] text-[#161616] relative text-left whitespace-nowrap z-[143]">
-            11
+           {data['count_object_control_point_completed']}%
           </span>
         </div>
         <div className="h-[1156px] self-stretch shrink-0 relative z-[144]">
@@ -605,7 +607,7 @@ const Etaps = ()=> {
             <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[146]">
               <div className="flex w-[737px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[147]">
                 <span className="flex w-[737px] h-[29px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[24px] font-bold leading-[29px] text-[#000] relative text-left whitespace-nowrap z-[148]">
-                  ППМ (708-ПП/ППТ)
+                 {data['object_control_point_completed'][0].control_point_library.name}
                 </span>
               </div>
               <div className="flex w-[687px] gap-[24px] items-start shrink-0 flex-nowrap relative z-[149]">
@@ -614,7 +616,7 @@ const Etaps = ()=> {
                     Исполнитель
                   </span>
                   <span className="flex w-[91px] h-[19px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[152]">
-                    ДГП
+                   {data['object_control_point_completed'][0].developers.name}
                   </span>
                 </div>
                 <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[153]">
@@ -622,7 +624,7 @@ const Etaps = ()=> {
                     План
                   </span>
                   <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[155]">
-                    25.12.19
+                   {data['object_control_point_completed'][0].plan_date}
                   </span>
                 </div>
                 <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[156]">
@@ -630,7 +632,7 @@ const Etaps = ()=> {
                     Факт
                   </span>
                   <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[158]">
-                    25.12.19
+                   {data['object_control_point_completed'][0].fact_date}
                   </span>
                 </div>
                 <div className="flex w-[148px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[159]">
@@ -638,7 +640,7 @@ const Etaps = ()=> {
                     Выполнение
                   </span>
                   <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[161]">
-                    100%
+                   {data['object_control_point_completed'][0].readiness}%
                   </span>
                 </div>
               </div>
@@ -647,7 +649,7 @@ const Etaps = ()=> {
           <div className="flex w-[1650px] h-[61px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center flex-nowrap bg-[#ecfff4] rounded-[8px] border-solid border border-[#00863d] relative z-[162] mt-[12px] mr-0 mb-0 ml-0">
             <div className="flex w-[737px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[163]">
               <span className="flex w-[737px] h-[29px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[24px] font-bold leading-[29px] text-[#000] relative text-left whitespace-nowrap z-[164]">
-                Получение ГПЗУ
+               {data['object_control_point_completed'][1].control_point_library.name}
               </span>
             </div>
             <div className="flex w-[687px] gap-[21px] items-start shrink-0 flex-nowrap relative z-[165]">
@@ -656,7 +658,7 @@ const Etaps = ()=> {
                   Исполнитель
                 </span>
                 <span className="flex w-[91px] h-[19px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[168]">
-                  МКА
+                 {data['object_control_point_completed'][1].developers.name}
                 </span>
               </div>
               <div className="flex w-[121px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[169]">
@@ -664,7 +666,7 @@ const Etaps = ()=> {
                   План
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[171]">
-                  29.09.20
+                 {data['object_control_point_completed'][1].plan_date}
                 </span>
               </div>
               <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[172]">
@@ -672,7 +674,7 @@ const Etaps = ()=> {
                   Факт
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[174]">
-                  29.09.20
+                 {data['object_control_point_completed'][1].fact_date}
                 </span>
               </div>
               <div className="flex w-[148px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[175]">
@@ -680,7 +682,7 @@ const Etaps = ()=> {
                   Выполнение
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-bold leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[177]">
-                  100%
+                 {data['object_control_point_completed'][1].readiness}%
                 </span>
               </div>
             </div>
@@ -688,7 +690,7 @@ const Etaps = ()=> {
           <div className="flex w-[1620px] h-[61px] pt-[16px] pr-[24px] pb-[16px] pl-[24px] justify-between items-center flex-nowrap bg-[#f4fff8] rounded-[8px] border-solid border border-[#00863d] relative z-[178] mt-[12px] mr-0 mb-0 ml-[30px]">
             <div className="flex w-[737px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[179]">
               <span className="flex w-[737px] h-[29px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[24px] font-normal leading-[29px] text-[#000] relative text-left whitespace-nowrap z-[180]">
-                Подача заявки
+               {data['object_control_point_completed'][1].object_construction_stages.name}
               </span>
             </div>
             <div className="flex w-[687px] gap-[21px] items-start shrink-0 flex-nowrap relative z-[181]">
@@ -697,7 +699,7 @@ const Etaps = ()=> {
                   Исполнитель
                 </span>
                 <span className="flex w-[91px] h-[19px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[184]">
-                  МКА
+                 {data['object_control_point_completed'][1].object_construction_stages.developers.name}
                 </span>
               </div>
               <div className="flex w-[117px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[185]">
@@ -705,7 +707,7 @@ const Etaps = ()=> {
                   План
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[187]">
-                  29.09.20
+                 {data['object_control_point_completed'][1].object_construction_stages.plan_date}
                 </span>
               </div>
               <div className="flex w-[111px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[188]">
@@ -713,7 +715,7 @@ const Etaps = ()=> {
                   Факт
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[190]">
-                  29.09.20
+                 {data['object_control_point_completed'][1].object_construction_stages.fact_date}
                 </span>
               </div>
               <div className="flex w-[148px] gap-[8px] items-start shrink-0 flex-nowrap relative z-[191]">
@@ -721,7 +723,7 @@ const Etaps = ()=> {
                   Выполнение
                 </span>
                 <span className="h-[19px] shrink-0 basis-auto font-['Inter'] text-[16px] font-medium leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[193]">
-                  100%
+                 {data['object_control_point_completed'][1].object_construction_stages.readiness}%
                 </span>
               </div>
             </div>

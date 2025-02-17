@@ -1,65 +1,109 @@
 {
-    "object_control_point": [ //верхний слайдер
-            {
-                "control_point_library": {
-                    //...
-                    "name": "Устройство инженерных систем"
-                    //...
-                },
-                "plan_date": "06.12.24", //
-                "fact_date": "-",
-                "developers": {
-                    "name": "ООО 'ГП-МФС'"
-                }
-            }            
-        ],
-    "count.object_control_point": "8", //кол-во этапов в работе)) для рассматриваемого объекта
-    "count.object_control_point": "19", // кол-во этапов всех этапов для рассматриваемого объекта
-    "object_control_point": [ //таблица 
+    "object_control_point_slider": [
         {
             "control_point_library": {
-                //...
                 "name": "Устройство инженерных систем"
-                //...
             },
-            "plan_date": "06.12.24", 
+            "plan_date": "06.12.24",
+            "fact_date": "-",
+            "developers": {
+                "name": "ООО 'ГП-МФС'"
+            }
+        },
+        {
+            "control_point_library": {
+                "name": "Отделочные работы"
+            },
+            "plan_date": "20.12.24",
+            "fact_date": "-",
+            "developers": {
+                "name": "ООО 'ГП-МФС'"
+            }
+        }
+    ],
+    "count_object_control_point_in_progress": "8",
+    "count_object_control_point_total": "19",
+    "object_control_point_table": [
+        {
+            "control_point_library": {
+                "name": "Устройство надземной части"
+            },
+            "plan_date": "04.10.24",
             "fact_date": "-",
             "developers": {
                 "name": "ООО 'ГП-МФС'"
             },
-            "readiness": "77", //% выполнения этапа для рассматриваемого объекта
-            "object_construction_stages": {//подкатегория контрольных точек для рассматриваемого объекта
+            "readiness": "77",
+            "object_construction_stages": {
                 "name": "",
                 "developers": {
                     "name": ""
                 },
-                "plan_date": "06.12.24",
+                "plan_date": "04.10.24",
                 "fact_date": "-"
             }
-        }
-    ],
-    "count.object_control_point": "11", //кол-во выполненых этапов для рассматриваемого объекта
-    "object_control_point": [ //те этапы что выполнены для рассматриваемого объекта
+        },
         {
             "control_point_library": {
-                //...
                 "name": "Устройство инженерных систем"
-                //...
             },
             "plan_date": "06.12.24",
             "fact_date": "-",
             "developers": {
                 "name": "ООО 'ГП-МФС'"
             },
-            "readiness": "77", //% выполнения этапа для рассматриваемого объекта
-            "object_construction_stages": {//подкатегория контрольных точек
+            "readiness": "77",
+            "object_construction_stages": {
                 "name": "",
                 "developers": {
                     "name": ""
                 },
-                "readiness": "77", //% выполнения этапа для рассматриваемого объекта
-                "plan_date": "06.12.24", //
+                "readiness": "77",
+                "plan_date": "06.12.24",
                 "fact_date": "-"
+            }
+        }
+    ],
+    "count_object_control_point_completed": "11",
+    "object_control_point_completed": [
+        {
+            "control_point_library": {
+                "name": "ППМ (708-ПП/ППТ)"
+            },
+            "plan_date": "25.12.19",
+            "fact_date": "25.12.19",
+            "developers": {
+                "name": "ДГП"
+            },
+            "readiness": "100",
+            "object_construction_stages": {
+                "name": "",
+                "developers": {
+                    "name": ""
+                },
+                "readiness": "100",
+                "plan_date": "25.12.19",
+                "fact_date": "25.12.19"
+            }
+        },
+        {
+            "control_point_library": {
+                "name": "Получение ГПЗУ"
+            },
+            "plan_date": "29.09.20",
+            "fact_date": "29.09.20",
+            "developers": {
+                "name": "МКА"
+            },
+            "readiness": "100",
+            "object_construction_stages": {
+                "name": "Подача заявки",
+                "developers": {
+                    "name": "МКА"
+                },
+                "readiness": "100",
+                "plan_date": "29.09.20",
+                "fact_date": "29.09.20"
             }
         }
     ]

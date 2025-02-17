@@ -3,6 +3,8 @@ import "./index.css";
 import { useState } from 'react';
 import { Filter } from "../assets/images/filter";
 
+import data from '/home/george/Task-DB-SMG/src/assets/data/catalog.json';
+
 const buttons1 = [
   { id: 9, label: "Жилые", count: 13 },
   { id: 10, label: "Нежилые", count: 84 },
@@ -257,28 +259,28 @@ const Listing = () => {
               1
             </span>
             <span className="flex w-[260.75px] h-[38px] justify-start items-start grow shrink-0 basis-0 font-['Golos_Text'] text-[20px] font-medium leading-[24px] text-[#161616] relative text-left z-[43]">
-              ГОРОДСКАЯ СТРОЙКА
+              {data['objects'][0].name}
             </span>
             <span className="flex w-[260.75px] h-[40px] justify-start items-start grow shrink-0 basis-0 font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left z-[44]">
-              Чечерский пр. вл. 28, участок 1
+              {data['objects'][0].adress}
             </span>
             <span className="flex w-[120px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[45]">
-              Жилые
+              {data['objects'][0].fno_library.type_code}
             </span>
             <span className="h-[20px] grow shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[46]">
-              Фонд реноваций
+             {data['objects'][0].customer.name}
             </span>
             <span className="h-[20px] grow shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[47]">
-              А101
+             {data['objects'][0].developer.name}
             </span>
             <span className="flex w-[120px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[48]">
-              30.06.2025
+             {data['objects'][0].deadline}
             </span>
             <span className="flex w-[114px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[49]">
               -
             </span>
             <span className="flex w-[100px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-50">
-              55%
+             {data['objects'][0].readiness}%
             </span>
           </a>
           <a href="/dashboard" className="flex pt-[30px] pr-[25px] pb-[30px] pl-[25px] gap-[10px] items-center self-stretch shrink-0 flex-nowrap border-[1px] border-t-[#dadada] border-solid border-b border-b-[#dadada] relative z-[41]">
@@ -286,28 +288,28 @@ const Listing = () => {
               2
             </span>
             <span className="flex w-[260.75px] h-[38px] justify-start items-start grow shrink-0 basis-0 font-['Golos_Text'] text-[20px] font-medium leading-[24px] text-[#161616] relative text-left z-[43]">
-              ЖК КВАРТАЛ РУМЯНЦЕВО
+             {data['objects'][1].name}
             </span>
             <span className="flex w-[260.75px] h-[40px] justify-start items-start grow shrink-0 basis-0 font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left z-[44]">
-              г. Москва, ул. Пушкина, 64
+             {data['objects'][1].adress}
             </span>
             <span className="flex w-[120px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[45]">
-              Школа
+             {data['objects'][1].fno_library.type_code}
             </span>
             <span className="h-[20px] grow shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[46]">
-              Фонд реноваций
+             {data['objects'][1].customer.name}
             </span>
             <span className="h-[20px] grow shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[47]">
-              А101
+             {data['objects'][1].developer.name}
             </span>
             <span className="flex w-[120px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[48]">
-              30.06.2025
+             {data['objects'][1].deadline}
             </span>
             <span className="flex w-[114px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[49]">
               -
             </span>
             <span className="flex w-[100px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-medium leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-50">
-              55%
+             {data['objects'][1].readiness}%
             </span>
           </a>
           <a href="/dashboard" className="flex pt-[30px] pr-[25px] pb-[30px] pl-[25px] gap-[10px] items-center self-stretch shrink-0 flex-nowrap border-t border-t-[#dadada] border-solid border-b border-b-[#dadada] relative z-[41]">

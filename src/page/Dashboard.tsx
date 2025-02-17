@@ -18,6 +18,8 @@ import House22 from '../assets/images/House2-2.jpg';
 import House23 from '../assets/images/House2-3.jpg';
 import House24 from '../assets/images/House2-4.jpg';
 
+import data from '/home/george/Task-DB-SMG/src/assets/data/detail.json';
+
 const Dashboard = () => {
 
   const swiperRef = useRef<SwiperRef | null>(null);
@@ -56,6 +58,18 @@ const Dashboard = () => {
     setActiveIndex2(index);
   };
 
+  /*-----------------------------------------------------------------------------*/
+  //Данные получаемые из JSON
+
+  const object_name = data['objects'].name;
+  const object_region = data['objects'].regions_library.name;
+  const object_adress = data['objects'].adress;
+  const object_uin = data['objects'].uin;
+  const object_area = data['objects'].area;
+  const object_passport_link = data['objects'].link;
+
+  /*-----------------------------------------------------------------------------*/
+
   return (
     <div className="main-container w-[1920px] h-auto text-[0px] bg-[#f1f3f7] rounded-[16px] relative overflow-hidden mx-auto my-0 pb-14">
       <a href="/listing" className="block h-[13px] font-['Golos_Text'] text-[18px] font-medium leading-[13px] text-[#c00000] relative text-left whitespace-nowrap z-[457] mt-[148px] mr-0 mb-0 ml-[116px] cursor-pointer w-min">
@@ -66,10 +80,10 @@ const Dashboard = () => {
           <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[2]">
             <div className="flex w-[517px] gap-[24px] items-center shrink-0 flex-nowrap relative z-[3]">
               <span className="h-[21px] shrink-0 basis-auto font-['Golos_Text'] text-[30px] font-bold leading-[21px] text-[#161616] relative text-left whitespace-nowrap z-[4]">
-                Жилой дом
+                {object_name}
               </span>
               <span className="flex w-[74px] h-[13px] justify-start items-start shrink-0 font-['Golos_Text'] text-[24px] font-normal leading-[13px] text-[#161616] relative text-left whitespace-nowrap z-[5]">
-                ВАО
+                {object_region}
               </span>
               <button className="flex w-[138px] h-[25px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#f8e4e4] rounded-[7px] border-solid border border-[#c00000] relative z-[6] pointer">
                 <span className="h-[11px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-semibold leading-[11px] text-[#c00000] relative text-left whitespace-nowrap z-[7]">
@@ -87,14 +101,14 @@ const Dashboard = () => {
             </span>
           </div>
           <span className="flex w-[530px] h-[14px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-normal leading-[14px] text-[#161616] relative text-left whitespace-nowrap z-[11]">
-            Амурская ул. уч. 1/19 (зоны 1.1, 1.2, 1.5)
+            {object_adress}
           </span>
           <div className="flex w-[213px] gap-[12px] items-start shrink-0 flex-nowrap relative z-[12]">
             <span className="h-[11px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-normal leading-[11px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[13]">
               УИН
             </span>
             <span className="h-[11px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-medium leading-[11px] text-[#4f4f4f] relative text-left whitespace-nowrap z-[14]">
-              TT0000-99-7886-001
+              {object_uin}
             </span>
           </div>
         </div>
@@ -105,11 +119,11 @@ const Dashboard = () => {
             </span>
             <span className="h-[19px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-normal leading-[19px] text-[#161616] relative text-left whitespace-nowrap z-[18]">
               {" "}
-              20549,94 м²
+              {object_area} м²
             </span>
           </div>
           <span className="h-[19px] shrink-0 basis-auto font-['Golos_Text'] text-[16px] font-medium leading-[19px] text-[#c00000] relative text-left whitespace-nowrap z-[19] cursor-pointer">
-            Ссылка на цифровой паспорт объекта
+            <a href = {object_passport_link}>Ссылка на цифровой паспорт объекта</a>
           </span>
         </div>
       </div>
@@ -200,52 +214,39 @@ const Dashboard = () => {
             <div className="flex w-[1625px] pt-[16px] pr-[16px] pb-[16px] pl-[24px] justify-between items-start shrink-0 flex-nowrap bg-[#f8e4e4] rounded-[8px] border-solid border border-[#c00000] relative z-[426]">
               <div className="flex w-[180px] h-[83px] items-center shrink-0 flex-nowrap relative z-[427]">
                 <span className="flex w-[180px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[20px] text-[#000] relative text-left z-[428]">
-                  Устройство надземной части
+                  {data['object_construction_stages'][0].construction_stages_library.name}
                 </span>
               </div>
               <div className="flex w-[250px] h-[83px] items-center shrink-0 flex-nowrap relative z-[429]">
                 <span className="flex w-[250px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[20px] text-[#000] relative text-left z-[430]">
-                  Недостаточное кол-во рабочей силы при возведении внутренних
-                  перегородок
+                  {data['object_construction_stages'][0].comment}
                 </span>
               </div>
               <div className="flex w-[300px] h-[83px] items-center shrink-0 flex-nowrap relative z-[431]">
                 <span className="flex w-[300px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[16px] text-[#161616] relative text-left z-[432]">
-                  Мобилизовать 100 человек
+                {data['object_construction_stages'][0].measures}
                 </span>
               </div>
               <div className="flex w-[200px] h-[83px] items-center shrink-0 flex-nowrap relative z-[433]">
                 <span className="flex w-[200px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[16px] text-[#161616] relative text-left z-[434]">
-                  ООО "ГП-МФС"
+                 {data['object_construction_stages'][0].developers.name}
                 </span>
               </div>
               <div className="flex w-[300px] h-[83px] items-center shrink-0 flex-nowrap relative z-[435]">
                 <div className="w-[300px] shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[16px] relative text-left z-[436]">
                   <span className="font-['Golos_Text'] text-[16px] font-normal leading-[16px] text-[#161616] relative text-left">
-                    04.10.2024 направлено предписание
-                    <br />
-                  </span>
-                  <span className="font-['Golos_Text'] text-[16px] font-normal leading-[20px] text-[#161616] relative text-left">
-                    Статус претензионной работы: в
-                  </span>
-                  <span className="font-['Golos_Text'] text-[16px] font-normal leading-[16px] text-[#161616] relative text-left">
-                    {" "}
-                    работе
-                    <br />
-                  </span>
-                  <span className="font-['Golos_Text'] text-[16px] font-normal leading-[20px] text-[#161616] relative text-left">
-                    Сумма штрафа: 750 тыс. руб
+                    {data['object_construction_stages'][0].already_done}
                   </span>
                 </div>
               </div>
               <div className="flex w-[100px] h-[83px] items-center shrink-0 flex-nowrap relative z-[437]">
                 <span className="flex w-[100px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-semibold leading-[20px] text-[#c00000] relative text-left z-[438]">
-                  04.11.2024
+                  {data['object_construction_stages'][0].end_date_plan}
                 </span>
               </div>
               <div className="flex w-[120px] h-[83px] items-center shrink-0 flex-nowrap relative z-[439]">
                 <span className="flex w-[120px] h-[83px] justify-start items-center shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[28px] text-[#161616] relative text-left z-[440]">
-                  В работе
+                  {data['object_construction_stages'][0].status}
                 </span>
               </div>
             </div>
@@ -483,7 +484,7 @@ const Dashboard = () => {
                         Дата контрактации
                       </span>
                       <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[353]">
-                        20.06.2023
+                       {data['panel-obj-info'].date}
                       </span>
                     </div>
                   </div>
@@ -493,7 +494,7 @@ const Dashboard = () => {
                         Заказчик
                       </span>
                       <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[357]">
-                        ДГП
+                        {data['panel-obj-info'].customer}
                       </span>
                     </div>
                     <div className="w-[24px] h-[24px] shrink-0 bg-[url(../assets/images/7712341b-53cd-456d-a554-d344cebc1402.png)] bg-cover bg-no-repeat relative overflow-hidden z-[358] cursor-pointer" />
@@ -504,7 +505,7 @@ const Dashboard = () => {
                         Генподрядчик
                       </span>
                       <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[362]">
-                        ООО “ГП-МФС”
+                       {data['panel-obj-info'].developer}
                       </span>
                     </div>
                     <div className="w-[24px] h-[24px] shrink-0 bg-[url(../assets/images/eed94ca7-b2e9-4a9c-a8c0-686bc8d12fa5.png)] bg-cover bg-no-repeat relative overflow-hidden z-[363] cursor-pointer" />
@@ -514,14 +515,16 @@ const Dashboard = () => {
                       Этажность
                     </span>
                     <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[366]">
-                      14
+                     {data['panel-obj-info'].number_of_floors}
                     </span>
                   </div>
                   <div className="flex w-[122px] flex-col gap-[12px] justify-center items-start shrink-0 flex-nowrap relative z-[367]">
                     <span className="flex w-[159px] h-[11px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[14px] font-medium leading-[11px] text-[#c00000] relative text-left whitespace-nowrap z-[368]">
                       Видеокамеры
                     </span>
-                    <div className="w-[21px] h-[13px] shrink-0 bg-[url(../assets/images/326af872-ea2c-4258-9336-d52b722c590a.png)] bg-cover bg-no-repeat relative z-[369]" />
+                    <a href= {data['panel-obj-info'].videocams.value}>
+                      <div className="w-[21px] h-[13px] shrink-0 bg-[url(../assets/images/326af872-ea2c-4258-9336-d52b722c590a.png)] bg-cover bg-no-repeat relative z-[369]" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -532,7 +535,7 @@ const Dashboard = () => {
                   Дата последнего продления (количество продлений)
                 </span>
                 <span className="flex w-[187px] h-[20px] justify-start items-start shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[386]">
-                  25.09.2024 (5)
+                 {data['panel-obj-info'].object_control_point.updated_at} ({data['panel-obj-info'].object_control_point.count_updated_at})
                 </span>
               </div>
               <div className="flex w-[177px] h-[60px] flex-col gap-[12px] items-start shrink-0 flex-nowrap relative z-[387]">
@@ -540,7 +543,7 @@ const Dashboard = () => {
                   Прогноз получения РВ
                 </span>
                 <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[389]">
-                  30.12.2024
+                 {data['panel-obj-info'].object_control_point.plan_date}
                 </span>
               </div>
             </div>
@@ -551,7 +554,7 @@ const Dashboard = () => {
                     Дата включения АИП
                   </span>
                   <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[374]">
-                    25.09.2019
+                   {data['panel-obj-info'].object_control_point.aip_inclusion_date}
                   </span>
                 </div>
               </div>
@@ -561,7 +564,7 @@ const Dashboard = () => {
                     Сумма по АИП
                   </span>
                   <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[378]">
-                    1,871 млрд руб. (0%)
+                   {data['panel-obj-info'].object_control_point.aip_sum} млрд руб. ({data['panel-obj-info'].object_control_point.percent}%)
                   </span>
                 </div>
               </div>
@@ -571,7 +574,7 @@ const Dashboard = () => {
                     Аванс
                   </span>
                   <span className="h-[20px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[20px] text-[#161616] relative text-left whitespace-nowrap z-[382]">
-                    0 млрд руб. (0%)
+                   {data['panel-obj-info'].prepayment.value} млрд руб. ({data['panel-obj-info'].prepayment.percent}%)
                   </span>
                 </div>
               </div>
@@ -614,19 +617,19 @@ const Dashboard = () => {
                           <span className="text-[14px]/[14px] font-normal">Кем принято решение:</span>
                       </div>
                       <div className="flex flex-col gap-[8px] ml-[24px]">    
-                          <span className="text-[16px]/[14px] font-medium">25.09.2024</span>
-                          <span className="text-[16px]/[14px] font-medium">03.12.2024</span>
-                          <span className="text-[16px]/[14px] font-medium">Ефимов В.В.</span>
+                          <span className="text-[16px]/[14px] font-medium">{data['info-switch'].object_control_point.warning.warning_hover.pervious_deadline}</span>
+                          <span className="text-[16px]/[14px] font-medium">{data['info-switch'].object_control_point.warning.warning_hover.change_date}</span>
+                          <span className="text-[16px]/[14px] font-medium">{data['info-switch'].object_control_point.warning.warning_hover.who_decided}</span>
                       </div>
                   </div>
-                  <span className="flex text-[14px]/[14px] font-normal justify-end">(Совещание от 24.09.2024) </span>
+                  <span className="flex text-[14px]/[14px] font-normal justify-end">(Совещание от {data['info-switch'].object_control_point.warning.warning_hover.additional}) </span>
                 </div>
               </div>
             </div>
             <div className="flex w-[211px] flex-col gap-[12px] items-center shrink-0 flex-nowrap relative z-[25]">
               <div className="flex w-[131px] gap-[8px] justify-center items-center shrink-0 flex-nowrap relative z-[26]">
                 <span className="h-[17px] shrink-0 basis-auto font-['Golos_Text'] text-[24px] font-semibold leading-[17px] text-[#161616] relative text-left whitespace-nowrap z-[27]">
-                  30.12.2024
+                  {data['info-switch'].object_control_point.plan_date}
                 </span>
               </div>
               <span className="flex w-[211px] h-[26px] justify-center items-start shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[16px] text-[#161616] relative text-center z-[28]">
@@ -637,7 +640,7 @@ const Dashboard = () => {
           <div className="flex w-[257px] pt-[16px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[12px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[8px] relative shadow-[0_10px_50px_0_#d2d4d8] z-[29]">
             <div className="flex w-[128px] gap-[8px] items-center shrink-0 flex-nowrap relative z-30">
               <span className="h-[17px] shrink-0 basis-auto font-['Golos_Text'] text-[24px] font-semibold leading-[17px] text-[#161616] relative text-left whitespace-nowrap z-[31]">
-                20.11.2024
+                {data['info-switch'].objects.forecasted_commissioning_date}
               </span>
             </div>
             <span className="flex w-[225px] h-[26px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[16px] text-[#161616] relative text-center z-[32]">
@@ -648,7 +651,7 @@ const Dashboard = () => {
           <div className="flex w-[257px] pt-[16px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[12px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[8px] relative shadow-[0_10px_50px_0_#d2d4d8] z-[33]">
             <div className="flex w-[130px] gap-[8px] items-center shrink-0 flex-nowrap relative z-[34]">
               <span className="h-[17px] shrink-0 basis-auto font-['Golos_Text'] text-[24px] font-semibold leading-[17px] text-[#161616] relative text-left whitespace-nowrap z-[35]">
-                26.12.2024
+               {data['info-switch'].objects.planned_commissioning_date}
               </span>
             </div>
             <span className="flex w-[225px] h-[26px] justify-center items-start self-stretch shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[16px] text-[#161616] relative text-center z-[36]">
@@ -660,7 +663,7 @@ const Dashboard = () => {
         <div className="flex w-auto h-[680px] pt-[24px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[8px] items-start flex-nowrap bg-[#fff] rounded-[12px] absolute top-[177px] left-[898px] overflow-hidden shadow-[0_10px_50px_0_#d2d4d8] z-[37] overflow-y-auto">
           <div className="flex w-[747px] pt-[16px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[24px] items-start shrink-0 flex-nowrap bg-[#fff] rounded-[10px] border-solid border-2 border-[#e4e6ea] relative z-[38]">
             <span className="h-[11px] self-stretch shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[11px] text-[#161616] relative text-left whitespace-nowrap z-[39]">
-              Строительная готовность
+              {data['info-switch'].construction_stages_library[0].name}
             </span>
             <div className="flex justify-between items-end self-stretch shrink-0 flex-nowrap relative z-40">
               <div className="flex w-[204px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[41]">
@@ -671,7 +674,7 @@ const Dashboard = () => {
                   <div className="flex flex-col gap-[8px] items-start self-stretch shrink-0 flex-nowrap relative z-[44]">
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[45]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#161616] tracking-[-0.4px] relative text-left whitespace-nowrap z-[46]">
-                        +1%
+                        {data['info-switch'].construction_stages_library[0].week_plan}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[47]">
                         план
@@ -679,7 +682,7 @@ const Dashboard = () => {
                     </div>
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[48]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#00863d] tracking-[-0.4px] relative text-left whitespace-nowrap z-[49]">
-                        +1%
+                       {data['info-switch'].construction_stages_library[0].week_fact}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-50">
                         факт
@@ -694,7 +697,7 @@ const Dashboard = () => {
                   <div className="flex flex-col gap-[8px] items-start self-stretch shrink-0 flex-nowrap relative z-[53]">
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[54]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#161616] tracking-[-0.4px] relative text-left whitespace-nowrap z-[55]">
-                        +2%
+                       {data['info-switch'].construction_stages_library[0].month_plan}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[56]">
                         план
@@ -702,7 +705,7 @@ const Dashboard = () => {
                     </div>
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[57]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#00863d] tracking-[-0.4px] relative text-left whitespace-nowrap z-[58]">
-                        +2%
+                       {data['info-switch'].construction_stages_library[0].month_fact}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[59]">
                         факт
@@ -722,7 +725,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-semibold leading-[10px] text-[#161616] relative text-left whitespace-nowrap z-[66]">
-                    76%
+                   {data['info-switch'].construction_stages_library[0].object_construction_stages.developer_plan}%
                   </span>
                 </div>
                 <div className="flex gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[67]">
@@ -735,7 +738,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-semibold leading-[10px] text-[#161616] relative text-left whitespace-nowrap z-[72]">
-                    77%
+                   {data['info-switch'].construction_stages_library[0].object_construction_stages.developer_fact}%
                   </span>
                 </div>
               </div>
@@ -743,7 +746,7 @@ const Dashboard = () => {
           </div>
           <div className="flex pt-[16px] pr-[16px] pb-[16px] pl-[16px] flex-col gap-[24px] items-start self-stretch shrink-0 flex-nowrap bg-[#fff] rounded-[10px] border-solid border-2 border-[#e4e6ea] relative z-[73]">
             <span className="h-[11px] self-stretch shrink-0 font-['Golos_Text'] text-[16px] font-normal leading-[11px] text-[#161616] relative text-left whitespace-nowrap z-[74]">
-              Конструктив
+            {data['info-switch'].construction_stages_library[1].name}
             </span>
             <div className="flex justify-between items-end self-stretch shrink-0 flex-nowrap relative z-[75]">
               <div className="flex w-[204px] gap-[36px] items-center shrink-0 flex-nowrap relative z-[76]">
@@ -754,7 +757,7 @@ const Dashboard = () => {
                   <div className="flex flex-col gap-[8px] items-start self-stretch shrink-0 flex-nowrap relative z-[79]">
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[80]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#161616] tracking-[-0.4px] relative text-left whitespace-nowrap z-[81]">
-                        +1%
+                      {data['info-switch'].construction_stages_library[1].week_plan}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[82]">
                         план
@@ -762,7 +765,7 @@ const Dashboard = () => {
                     </div>
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[83]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#c00000] tracking-[-0.4px] relative text-left whitespace-nowrap z-[84]">
-                        -2%
+                       {data['info-switch'].construction_stages_library[1].week_fact}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[85]">
                         факт
@@ -777,7 +780,7 @@ const Dashboard = () => {
                   <div className="flex flex-col gap-[8px] items-start self-stretch shrink-0 flex-nowrap relative z-[88]">
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[89]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#161616] tracking-[-0.4px] relative text-left whitespace-nowrap z-[90]">
-                        +1%
+                       {data['info-switch'].construction_stages_library[1].month_plan}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[91]">
                         план
@@ -785,7 +788,7 @@ const Dashboard = () => {
                     </div>
                     <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[92]">
                       <span className="h-[14px] shrink-0 basis-auto font-['Golos_Text'] text-[20px] font-semibold leading-[14px] text-[#808080] tracking-[-0.4px] relative text-left whitespace-nowrap z-[93]">
-                        +0%
+                       {data['info-switch'].construction_stages_library[1].month_fact}%
                       </span>
                       <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-normal leading-[10px] text-[#161616] tracking-[-0.28px] relative text-left whitespace-nowrap z-[94]">
                         факт
@@ -805,7 +808,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-semibold leading-[10px] text-[#161616] relative text-left whitespace-nowrap z-[101]">
-                    89%
+                   {data['info-switch'].construction_stages_library[1].object_construction_stages.developer_plan}%
                   </span>
                 </div>
                 <div className="flex gap-[16px] items-center self-stretch shrink-0 flex-nowrap relative z-[102]">
@@ -818,7 +821,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <span className="h-[10px] shrink-0 font-['Golos_Text'] text-[14px] font-semibold leading-[10px] text-[#161616] relative text-left whitespace-nowrap z-[107]">
-                    80%
+                   {data['info-switch'].construction_stages_library[1].object_construction_stages.developer_fact}%
                   </span>
                 </div>
               </div>
@@ -1128,7 +1131,7 @@ const Dashboard = () => {
               <div className="w-[373px] h-[159px] shrink-0 relative z-[246]">
                 <div className="w-[399px] h-[124px] relative z-[258] mt-[10px] mr-0 mb-0 ml-px">
                   <span className="flex h-[24px] justify-start items-start font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#303030] absolute top-0 left-[259px] text-left whitespace-nowrap z-[258]">
-                    план - 250 чел
+                    план - {data['panel-monitoring'].monitor_people.count_plan} чел
                   </span>
                   <div className="w-[109px] h-[117px] bg-[url(../assets/images/7d6b1145-e158-4ee7-ab3c-10c759079885.png)] bg-cover bg-no-repeat absolute top-[7px] left-[142px] z-[251]" />
                   <div className="w-[109px] h-[108px] bg-[url(../assets/images/be3fd09d-a8c9-4c67-a6bb-214a0d7c61c9.png)] bg-cover bg-no-repeat absolute top-[16px] left-[251px] z-[252]" />
@@ -1137,21 +1140,21 @@ const Dashboard = () => {
                   <div className="flex w-[44px] h-[11px] gap-[4px] items-end flex-nowrap absolute top-[28px] left-[355px] z-[253]">
                     <div className="w-[10px] h-[10px] shrink-0 bg-[url(../assets/images/5999ce5d-0f33-42e5-8394-5c84e5d679ef.png)] bg-cover bg-no-repeat rounded-[50%] relative z-[254]" />
                     <span className="h-[11px] shrink-0 font-['Golos_Text'] text-[16px] font-medium leading-[11px] text-[#c00000] relative text-left whitespace-nowrap z-[255]">
-                      200
+                     {data['panel-monitoring'].monitor_people.count_fact}
                     </span>
                   </div>
                   <div className="w-[371.5px] h-[7.364px] bg-[url(../assets/images/9b2a6c82-1a07-41b7-93af-e1840b37cf9b.png)] bg-cover bg-no-repeat absolute top-[120.318px] left-0 z-[257]" />
                 </div>
                 <div className="flex w-[360px] h-[24px] justify-between items-center relative z-[249] mt-px mr-0 mb-0 ml-0">
                   <span className="h-[24px] shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#161616] relative text-left whitespace-nowrap z-[248]">
-                    01.12.2024
+                   {data['panel-monitoring'].monitor_people.timestamp_start}
                   </span>
                   <div className="flex w-[200px] h-[24px] justify-between items-center shrink-0 relative z-[249]">
                     <span className="h-[24px] shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#161616] relative text-left whitespace-nowrap z-[249]">
-                      07.12.2024
+                     {data['panel-monitoring'].monitor_people.timestamp_mid}
                     </span>
                     <span className="h-[24px] shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#161616] relative text-left whitespace-nowrap z-[247]">
-                      14.12.2024
+                     {data['panel-monitoring'].monitor_people.timestamp_end}
                     </span>
                   </div>
                 </div>
@@ -1164,7 +1167,7 @@ const Dashboard = () => {
               <div className="w-[375px] h-[159px] shrink-0 relative z-[261]">
                 <div className="w-[389px] h-[125px] relative z-[273] mt-[10px] mr-0 mb-0 ml-0">
                   <span className="flex h-[24px] justify-start items-start font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#303030] absolute top-0 left-[277px] text-left whitespace-nowrap z-[272]">
-                    план - 50 ед
+                    план - {data['panel-monitoring'].monitor_technica.count_plan} ед
                   </span>
                   <div className="w-[109px] h-[119px] bg-[url(../assets/images/06b23727-a17b-4ec9-a912-2e8177594359.png)] bg-cover bg-no-repeat absolute top-[5px] left-[78px] z-[263]" />
                   <div className="w-[358.5px] h-[31.5px] bg-[url(../assets/images/cc404623-7ee5-4ae8-a724-fa2e35b48759.png)] bg-cover bg-no-repeat absolute top-[24px] left-[3.5px] z-[273]" />
@@ -1173,21 +1176,21 @@ const Dashboard = () => {
                   <div className="flex w-[32px] h-[11px] gap-[4px] items-end flex-nowrap absolute top-[44px] left-[357px] z-[269]">
                     <div className="w-[10px] h-[10px] shrink-0 bg-[url(../assets/images/660f95bc-7c9c-4c1f-a486-87dfbf4ed584.png)] bg-cover bg-no-repeat rounded-[50%] relative z-[270]" />
                     <span className="h-[11px] shrink-0 font-['Golos_Text'] text-[16px] font-medium leading-[11px] text-[#c00000] relative text-left whitespace-nowrap z-[271]">
-                      41
+                     {data['panel-monitoring'].monitor_technica.count_fact}
                     </span>
                   </div>
                   <div className="w-[375px] h-[7.364px] bg-[url(../assets/images/5f6ebe71-e53c-457a-85e2-bb9a26f631bf.png)] bg-cover bg-no-repeat absolute top-[120.318px] left-0 z-[265]" />
                 </div>
                 <div className="flex w-[361px] h-[24px] justify-between items-center relative z-[268] mt-0 mr-0 mb-0 ml-0">
                   <span className="h-[24px] shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#161616] relative text-left whitespace-nowrap z-[267]">
-                    01.12.2024
+                   {data['panel-monitoring'].monitor_technica.timestamp_start}
                   </span>
                   <div className="flex w-[212px] h-[24px] justify-between items-center shrink-0 relative z-[268]">
                     <span className="h-[24px] shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#161616] relative text-left whitespace-nowrap z-[268]">
-                      07.12.2024
+                     {data['panel-monitoring'].monitor_technica.timestamp_mid}
                     </span>
                     <span className="h-[24px] shrink-0 font-['Golos_Text'] text-[14px] font-medium leading-[24px] text-[#161616] relative text-left whitespace-nowrap z-[266]">
-                      14.12.2024
+                     {data['panel-monitoring'].monitor_technica.timestamp_end}
                     </span>
                   </div>
                 </div>
