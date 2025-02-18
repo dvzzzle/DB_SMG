@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import "./index.css";
-import data from '/home/george/Task-DB-SMG/src/assets/data/main.json';
+import data from '../assets/data/main.json';
 
 const years = [2024, 2025, 2026, 2027, 2028];
 const executivePolicyBody = ['Департамент градостроительной политики', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Нет'];

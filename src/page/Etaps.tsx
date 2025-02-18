@@ -8,7 +8,7 @@ import { Swiper as SwiperRef } from "swiper";
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import data from '/home/george/Task-DB-SMG/src/assets/data/stages.json';
+import data from '../assets/data/stages.json';
 
 const Etaps = ()=> {
 

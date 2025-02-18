@@ -18,7 +18,7 @@ import House22 from '../assets/images/House2-2.jpg';
 import House23 from '../assets/images/House2-3.jpg';
 import House24 from '../assets/images/House2-4.jpg';
 
-import data from '/home/george/Task-DB-SMG/src/assets/data/detail.json';
+import data from '../assets/data/detail.json';
 
 const Dashboard = () => {
 

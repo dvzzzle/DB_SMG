@@ -3,7 +3,7 @@ import "./index.css";
 import { useState } from 'react';
 import { Filter } from "../assets/images/filter";
 
-import data from '/home/george/Task-DB-SMG/src/assets/data/catalog.json';
+import data from '../assets/data/catalog.json';
 
 const buttons1 = [
   { id: 9, label: "Жилые", count: 13 },
